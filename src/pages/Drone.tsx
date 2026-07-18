@@ -1,9 +1,11 @@
 import React from 'react';
 
+import Header from '../components/Header'
+
 const Drone: React.FC = () => {
   return (
     <>
-      <h1>Drone</h1>
+      <Header />
     </>
   );
 }

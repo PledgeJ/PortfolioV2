@@ -28,7 +28,7 @@ const ThemeToggle: React.FC = () => {
   return (
     <button
       onClick={() => setIsDark(!isDark)}
-      className="flex items-center gap-2 rounded-full border border-border-line bg-card-bg px-4 py-2 text-sm font-medium text-main-text hover:border-accent-green transition-all cursor-pointer"
+      className="flex items-center gap-2 pointer-events-auto w-24 px-4 h-12 justify-center rounded-full bg-card-bg border border-alt-text/20 shadow-lg text-base cursor-pointer transition-all duration-300 active:scale-95 text-alt-text/80 hover:scale-102"
     >
       {isDark ? (
         <><span className="text-xl"><RiContrast2Fill /></span><span>Dark</span></>

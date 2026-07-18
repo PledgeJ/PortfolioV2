@@ -1,12 +1,12 @@
 import React from 'react';
 
-import ThemeToggle from '../components/ThemeToggle'
+import Header from '../components/Header'
 
 const Cover: React.FC = () => {
   return (
     <>
-      <h1>Cover</h1>
-      <ThemeToggle />
+      <Header />
+      <div className="h-10000"></div>
     </>
   );
 }

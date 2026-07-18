@@ -10,6 +10,8 @@
   --color-accent-green: #16ca85;
   --color-accent-orange: #f78166;
   --color-accent-blue: #0891b2;
+
+  --color-github: #2b3137;
 }
 
 .dark {    
@@ -18,10 +20,31 @@
   --color-main-text: #e6edf3;
   --color-alt-text: #8b949e;
   --color-border-line: #30363d;
+
+  --color-github: #ffffff;
 }
 
 body {
   background-color: var(--color-page-bg);
   color: var(--color-main-text);
   transition: all 0.2s ease;
+}
+
+.accent-blend {
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--color-accent-blue) 15%, transparent) 0%,
+    color-mix(in srgb, var(--color-accent-green) 15%, transparent) 50%,
+    color-mix(in srgb, var(--color-accent-orange) 15%, transparent) 100%
+  );
+}
+
+.dark .accent-blend {
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--color-accent-blue) 30%, #1c222c) 0%,
+    color-mix(in srgb, var(--color-accent-green) 30%, #1c222c) 50%,
+    color-mix(in srgb, var(--color-accent-orange) 30%, #1c222c) 100%
+  );
+  border: 1px solid var(--color-border-line);
 }

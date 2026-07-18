@@ -1,9 +1,11 @@
 import React from 'react';
 
+import Header from '../components/Header'
+
 const Projects: React.FC = () => {
   return (
     <>
-      <h1>Projects</h1>
+      <Header />
     </>
   );
 }
