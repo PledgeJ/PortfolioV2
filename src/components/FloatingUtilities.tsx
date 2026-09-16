@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { FaArrowUp } from 'react-icons/fa';
 import ThemeToggle from '../components/ThemeToggle'
 
+import { Fab } from '@mui/material';
+
 const FloatingUtilities: React.FC = () => {
   const scrollToTop = () => {
     window.scrollTo({
@@ -27,21 +29,42 @@ const FloatingUtilities: React.FC = () => {
   }, [dimScroll])
 
   return (
-    // circle menu with theme switcher and scroll to top
-    <div className="fixed bottom-6 right-6 z-50 flex flex-row gap-2 items-center justify-center">
-      <ThemeToggle />
+    <>
+      {/* circle menu with theme switcher and scroll to top */}
+      <div className="fixed bottom-6 right-6 z-50 flex flex-row gap-2 items-center justify-center">
+        <ThemeToggle />
 
-      {/* Button to go to the top */}
-      <button
-        onClick={scrollToTop}
-        className={`pointer-events-auto w-12 h-12 flex items-center justify-center rounded-full bg-card-bg border border-alt-text/20 shadow-lg text-base cursor-pointer transition-all duration-300 text-alt-text/80 hover:scale-102
-          ${dimScroll ? 'opacity-100' : 'opacity-50 pointer-events-none'}
-        `}
-        aria-label="Scroll back to top"
-      >
-        <FaArrowUp />
-      </button>
-    </div>
+        {/* Button to go to the top */}
+        <Fab
+          onClick={scrollToTop}
+          sx={{
+            pointerEvents: dimScroll ? 'auto' : 'none',
+            width: 48,
+            height: 48,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            borderRadius: '100%',
+            backgroundColor: 'var(--color-card-bg)',
+            border: '1px solid',
+            borderColor: 'var(--color-border-line)',
+            boxShadow: 3,
+            fontSize: '1rem',
+            cursor: 'pointer',
+            transition: 'all 0.3s',
+            color: 'var(--color-alt-text)',
+            opacity: dimScroll ? 1 : 0.5,
+            '&:hover': {
+              transform: 'scale(1.02)',
+              backgroundColor: 'var(--color-card-bg)'
+            },
+          }}
+          aria-label="Scroll back to top"
+        >
+          <FaArrowUp />
+        </Fab>
+      </div>
+    </>
   )
 }
 

@@ -1,3 +1,4 @@
+import { Fab } from '@mui/material';
 import React, { useState, useEffect } from 'react'
 
 import { RiContrast2Fill, RiContrast2Line } from "react-icons/ri";
@@ -26,16 +27,22 @@ const ThemeToggle: React.FC = () => {
   }, [isDark])
 
   return (
-    <button
+    <Fab
       onClick={() => setIsDark(!isDark)}
-      className="flex items-center gap-2 pointer-events-auto w-24 px-4 h-12 justify-center rounded-full bg-card-bg border border-alt-text/20 shadow-lg text-base cursor-pointer transition-all duration-300 active:scale-95 text-alt-text/80 hover:scale-102"
+      variant="extended"
+      sx={{
+        backgroundColor: 'var(--color-card-bg)',
+        color: 'rgba(var(--alt-text), 0.8)',
+        gap: 1,
+        textTransform: 'none',
+        '&:hover': {
+          backgroundColor: 'var(--color-card-hover)',
+        },
+      }}
     >
-      {isDark ? (
-        <><span className="text-xl"><RiContrast2Fill /></span><span>Dark</span></>
-      ) : (
-        <><span className="text-xl"><RiContrast2Line /></span><span>Light</span></>
-      )}
-    </button>
+      {isDark ? <RiContrast2Fill style={{ fontSize: '20px' }} /> : <RiContrast2Line style={{ fontSize: '20px' }} />}
+      {isDark ? 'Dark' : 'Light'}
+    </Fab>
   )
 }
 
