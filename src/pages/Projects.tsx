@@ -1,13 +1,9 @@
-import React from 'react';
-
 import Header from '../components/Header'
 
-const Projects: React.FC = () => {
+export default function Projects() {
   return (
     <>
       <Header />
     </>
   );
 }
-
-export default Projects;

@@ -1,9 +1,9 @@
 import { Fab } from '@mui/material';
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 import { RiContrast2Fill, RiContrast2Line } from "react-icons/ri";
 
-const ThemeToggle: React.FC = () => {
+export default function ThemeToggle() {
   // Checking the last used theme
   const [isDark, setIsDark] = useState(() => {
     const savedTheme = localStorage.getItem('theme')
@@ -38,6 +38,10 @@ const ThemeToggle: React.FC = () => {
         '&:hover': {
           backgroundColor: 'var(--color-card-hover)',
         },
+        '&:active': {
+          backgroundColor: 'var(--color-card-bg)',
+          boxShadow: 3,
+        },
       }}
     >
       {isDark ? <RiContrast2Fill style={{ fontSize: '20px' }} /> : <RiContrast2Line style={{ fontSize: '20px' }} />}
@@ -45,5 +49,3 @@ const ThemeToggle: React.FC = () => {
     </Fab>
   )
 }
-
-export default ThemeToggle

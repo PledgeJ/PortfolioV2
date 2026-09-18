@@ -1,8 +1,7 @@
-import React from 'react';
 import { FaInstagram, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-const Header: React.FC = () => {
+export default function Header() {
   const nav = useNavigate();
 	const page = useLocation().pathname;
 
@@ -39,5 +38,3 @@ const Header: React.FC = () => {
     </div>
   )
 }
-
-export default Header

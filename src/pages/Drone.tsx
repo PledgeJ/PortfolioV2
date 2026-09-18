@@ -1,13 +1,9 @@
-import React from 'react';
-
 import Header from '../components/Header'
 
-const Drone: React.FC = () => {
+export default function Drone() {
   return (
     <>
       <Header />
     </>
   );
 }
-
-export default Drone;
