@@ -1,6 +1,7 @@
 import Header from '../components/Header'
 
 import { Box, Typography, Button } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 import { TbDrone } from "react-icons/tb";
 import { FaCode } from "react-icons/fa6";
@@ -38,7 +39,7 @@ export default function Cover() {
             borderRadius: { xs: 0, md: 3 },
             // boxShadow: 6, (L performance)
           }}
-          poster="src/assets/Cover/sunrise mountain.png"
+          poster="/cover/sunrise mountain.png"
         />
 
         {/* Intro panel */}
@@ -78,7 +79,7 @@ export default function Cover() {
                   height: 220,
                 }}
                 alt='Me and my friends skiing'
-                src='src/assets/Cover/ski.jpg'
+                src='/cover/ski.webp'
               />    
             </Box>   
 
@@ -101,7 +102,7 @@ export default function Cover() {
               sx={{
                 width: '100%',
                 height: 2,
-                backgroundColor: 'white',
+                backgroundColor: 'var(--color-alt-text)',
                 borderRadius: 20,
                 opacity: 0.2
               }}
@@ -121,7 +122,7 @@ export default function Cover() {
                   width: 400,
                 }}
                 alt='FPV Drone'
-                src='src/assets/Cover/redFPVDrone.jpg'
+                src='/cover/redFPVDrone.webp'
               />
             </Box>
 
@@ -132,7 +133,7 @@ export default function Cover() {
               sx={{
                 width: '100%',
                 height: 2,
-                backgroundColor: 'white',
+                backgroundColor: 'var(--color-alt-text)',
                 borderRadius: 20,
                 opacity: 0.2
               }}
@@ -156,7 +157,7 @@ export default function Cover() {
                 width: {xs:150, md:170},
               }}
               alt='Authur and Aira by OffScript'
-              src='src/assets/Cover/authur+aira.jpg'
+              src='/cover/authur+aira.webp'
             />
 
             <p>I'm a very visual person, who likes colours and anything that I think looks super cool. 
@@ -173,7 +174,7 @@ export default function Cover() {
               sx={{
                 width: '100%',
                 height: 2,
-                backgroundColor: 'white',
+                backgroundColor: 'var(--color-alt-text)',
                 borderRadius: 20,
                 opacity: 0.2
               }}
@@ -205,6 +206,8 @@ export default function Cover() {
                     scale: 1.01
                   },
                 }}
+                component={Link}
+                to='/drone'
               >
                 <TbDrone className='size-20'/>
                 Drone work
@@ -228,6 +231,8 @@ export default function Cover() {
                     scale: 1.01
                   },
                 }}
+                component={Link}
+                to='/projects'
               >
                 <FaCode className='size-20'/>
                 Projects
