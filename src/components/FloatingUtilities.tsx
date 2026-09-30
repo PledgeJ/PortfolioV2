@@ -95,7 +95,7 @@ export default function FloatingUtilities() {
           sx={{
             position: 'fixed',
             bottom: 24,
-            right: 84,
+            right: {xs: 84, lg: 125},
             zIndex: 1290,
             transition: (theme) =>
               theme.transitions.create(['opacity', 'transform'], {
