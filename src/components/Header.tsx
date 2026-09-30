@@ -12,7 +12,7 @@ export default function Header() {
   }
 
   return (
-    <div className="bg-card-bg">
+    <div className="sticky top-0 z-50 bg-card-bg">
     <header className="flex lg:flex-row flex-col justify-between items-center">
       <div className="flex flex-row lg:order-1 order-2 w-75 h-27 justify-center gap-8 items-center">
         <button className={`cursor-pointer ${page === '/drone' ? 'font-bold' : 'text-alt-text/70 font-normal hover:text-accent-blue'} text-s text-base duration-300 ease-in-out transition-colors`} onClick={() => nav('/drone')}>Drone</button>

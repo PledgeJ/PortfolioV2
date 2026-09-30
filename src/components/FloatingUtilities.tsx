@@ -92,10 +92,10 @@ export default function FloatingUtilities() {
         </Box>
 
         <Box
+          className="right-21 lg:right-31.25"
           sx={{
             position: 'fixed',
             bottom: 24,
-            right: {xs: 84, lg: 125},
             zIndex: 1290,
             transition: (theme) =>
               theme.transitions.create(['opacity', 'transform'], {

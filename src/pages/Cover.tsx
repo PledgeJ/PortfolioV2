@@ -1,6 +1,9 @@
 import Header from '../components/Header'
 
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, Button } from '@mui/material';
+
+import { TbDrone } from "react-icons/tb";
+import { FaCode } from "react-icons/fa6";
 
 export default function Cover() {
   return (
@@ -35,41 +38,205 @@ export default function Cover() {
             borderRadius: { xs: 0, md: 3 },
             // boxShadow: 6, (L performance)
           }}
-          poster="src/assets/sunrise mountain.png"
+          poster="src/assets/Cover/sunrise mountain.png"
         />
 
         {/* Intro panel */}
-        <Box>
+        <Box
+          className="grid lg:grid-cols-2 gap-8 mx-4 sm:mx-12"
+        >
           <Typography variant='h1' sx={{ fontSize: '2rem', marginTop: 5 }}>Hi, I'm Jacob!</Typography>
-          <br/>
-          <p>I'm a 2nd year computer science undergrad, and also a drone pilot specialising in building surveys and event filming</p>
-          <p>I'd like to hopefully get into the electronics or networking fields in the future</p>
-          <br/>
-          <p>I started building and flying drones around October 2021, and have since worked on building surveys and </p>
-          <p>I then got the opportunity to work doing technical surveys of building facades</p>
-          <br/>
-          <p>I find that I'm a very visual person, who loves colours and anything that I think looks super cool</p>
-          <p>An animator that I really like is OffScript, who created Aira and Aurthur</p>
-          <Box
-            component='img'
-            sx = {{
-              borderRadius: '30px',
-              width: 200,
-            }}
-            alt='Authur and Aira by OffScript'
-            src='src\assets\authur+aira.jpg'
-          />
 
+          {/* 1st box */}
           <Box
-            component='img'
-            sx = {{
-              borderRadius: '30px',
-              height: 200,
+            className='col-start-1 row-start-2 col-span-2 lg:col-span-1'
+            sx={{
+              alignItems: 'center',
+              justifyItems: 'center',
+              gap: 4
             }}
-            alt='Me and my friends skiing'
-            src='src\assets\ski.jpg'
-          />
+          >
+            <Box>
+              <p>I'm a 2nd year computer science undergraduate at the University of Nottingham, and also a drone pilot specialising in building surveys and event filming.</p>
+              <br/>
+              <p>I'd like to hopefully get into the electronics or networking fields in the future</p>
+            </Box>
+
+            <br/>
+            
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                width: '100%',
+              }}
+            >
+              <Box
+                component='img'
+                sx = {{
+                  borderRadius: '20px',
+                  height: 220,
+                }}
+                alt='Me and my friends skiing'
+                src='src/assets/Cover/ski.jpg'
+              />    
+            </Box>   
+
+             
+          </Box>
+
+          {/* Drones */}
+          <Box
+            className='col-start-1 row-start-3 col-span-2 lg:col-span-1 lg:row-start-2'
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: 4
+            }}
+          >
+            {/* Line */}
+            <Box 
+              className='lg:mb-8 lg:order-3 lg:mt-4'
+              sx={{
+                width: '100%',
+                height: 2,
+                backgroundColor: 'white',
+                borderRadius: 20,
+                opacity: 0.2
+              }}
+            />
+
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                width: '100%',
+              }}
+            >
+              <Box
+                component='img'
+                sx = {{
+                  borderRadius: '20px',
+                  width: 400,
+                }}
+                alt='FPV Drone'
+                src='src/assets/Cover/redFPVDrone.jpg'
+              />
+            </Box>
+
+            <p>I started building and flying drones around October 2021, and have since worked on building surveys, and I then got the opportunity to work doing technical surveys of building facades</p>
           
+            <Box 
+              className='lg:hidden'
+              sx={{
+                width: '100%',
+                height: 2,
+                backgroundColor: 'white',
+                borderRadius: 20,
+                opacity: 0.2
+              }}
+            />
+          </Box>
+
+          {/* Offscript */}
+          <Box
+            className='col-start-1 col-span-2 lg:col-span-1 row-start-4 lg:col-start-2 lg:row-start-3'
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent:'center',
+              gap: 4,
+            }}
+          >
+            <Box
+              component='img'
+              sx = {{
+                borderRadius: '20px',
+                width: {xs:150, md:170},
+              }}
+              alt='Authur and Aira by OffScript'
+              src='src/assets/Cover/authur+aira.jpg'
+            />
+
+            <p>I'm a very visual person, who likes colours and anything that I think looks super cool. 
+              An animator that I really love the style of is OffScript, who created the characters Aira and Aurthur</p>
+            
+          </Box>
+
+          {/* Check out work */}
+          <Box
+            className='col-start-1 col-span-2 lg:col-span-1 row-start-5 lg:row-start-3'
+          >
+            <Box 
+              className='mb-8'
+              sx={{
+                width: '100%',
+                height: 2,
+                backgroundColor: 'white',
+                borderRadius: 20,
+                opacity: 0.2
+              }}
+            />  
+
+            <Typography variant='h2' sx={{ fontSize: '1.5rem', marginBottom: 3 }}>Check out my work:</Typography>
+
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'space-evenly'
+              }}
+            >
+              <Button
+                sx={{
+                  padding: 2,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  gap: 2,
+                  width: '40%',
+                  height: '100%',
+                  backgroundColor: 'var(--color-card-bg)',
+                  color: {xs:'var(--color-main-text)', md:'var(--color-alt-text)'},
+                  borderRadius: 2,
+                  '&:hover': {
+                    color: 'var(--color-main-text)',
+                    scale: 1.01
+                  },
+                }}
+              >
+                <TbDrone className='size-20'/>
+                Drone work
+              </Button>
+
+              <Button
+                sx={{
+                  padding: 2,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  gap: 2,
+                  width: '40%',
+                  height: '100%',
+                  backgroundColor: 'var(--color-card-bg)',
+                  color: {xs:'var(--color-main-text)', md:'var(--color-alt-text)'},
+                  borderRadius: 2,
+                  '&:hover': {
+                    color: 'var(--color-main-text)',
+                    scale: 1.01
+                  },
+                }}
+              >
+                <FaCode className='size-20'/>
+                Projects
+              </Button>
+            </Box>
+
+            <Box sx={{height: 100}}/>
+          </Box>
+
         </Box>
 
       </Box>
