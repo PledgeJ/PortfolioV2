@@ -1,4 +1,4 @@
-import { Fab, Box } from '@mui/material';
+import { Button, Box } from '@mui/material';
 import { useEffect, useState } from 'react';
 
 import { FaArrowUp } from 'react-icons/fa';
@@ -62,23 +62,21 @@ export default function FloatingUtilities() {
           </div>
 
           {/* Toggle Button */}
-          <Fab
+          <Button
             onClick={() => setIsOpen(!isOpen)}
             sx={{
               width: 48,
-              height: 48,
+              height: 'auto',
+              aspectRatio: '1/1',
               backgroundColor: 'var(--color-card-bg)',
               border: '1px solid',
               borderColor: 'var(--color-border-line)',
               boxShadow: 3,
+              borderRadius: '100%',
               color: 'var(--color-alt-text)',
-              '&:hover': {
-                backgroundColor: 'var(--color-card-hover)',
-              },
-              '&:active': {
-                backgroundColor: 'var(--color-card-bg)',
-                boxShadow: 3,
-              },
+              padding: 0,
+              minWidth: 0,
+              minHeight: 0,
             }}
             aria-label="Toggle utility menu"
           >
@@ -87,7 +85,7 @@ export default function FloatingUtilities() {
             ) : (
               <HiDotsVertical style={{ fontSize: '20px' }} />
             )}
-          </Fab>
+          </Button>
           </div>
         </Box>
 
@@ -107,12 +105,15 @@ export default function FloatingUtilities() {
           }}
         >
           {/* Button to go to the top */}
-          <Fab
+          <Button
             onClick={scrollToTop}
             sx={{
               pointerEvents: dimScroll ? 'auto' : 'none',
               width: 48,
               height: 48,
+              padding: 0,
+              minWidth: 0,
+              minHeight: 0,
               display: isOpen ? 'none' : 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -125,20 +126,12 @@ export default function FloatingUtilities() {
               cursor: 'pointer',
               transition: 'all 0.3s',
               color: 'var(--color-alt-text)',
-              opacity: dimScroll ? 1 : 0.5,
-              '&:hover': {
-                transform: 'scale(1.02)',
-                backgroundColor: 'var(--color-card-bg)'
-              },
-              '&:active': {
-                backgroundColor: 'var(--color-card-bg)',
-                boxShadow: 3,
-              },
+              opacity: dimScroll ? 1 : 0.5
             }}
             aria-label="Scroll back to top"
           >
-            <FaArrowUp />
-          </Fab>
+            <FaArrowUp/>
+          </Button>
         </Box>
     </>
   )
