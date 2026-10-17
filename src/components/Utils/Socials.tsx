@@ -2,7 +2,7 @@ import { Button } from '@mui/material';
 
 import { FaInstagram, FaGithub, FaLinkedin } from 'react-icons/fa';
 
-export default function Socials() {
+export function Socials() {
   return (
     <div className='flex flex-row gap-2'>
       <Button

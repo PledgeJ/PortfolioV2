@@ -1,7 +1,8 @@
+import type React from 'react';
 import { FaInstagram, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-export default function Header() {
+export function Header(): React.JSX.Element {
   const nav = useNavigate();
 	const page = useLocation().pathname;
 

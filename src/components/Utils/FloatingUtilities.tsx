@@ -1,14 +1,14 @@
 import { Button, Box } from '@mui/material';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { FaArrowUp } from 'react-icons/fa';
 import { HiDotsVertical } from 'react-icons/hi';
 import { IoClose } from 'react-icons/io5';
 
-import ThemeToggle from '../components/ThemeToggle'
-import Socials from './Socials';
+import ThemeToggle from './ThemeToggle'
+import { Socials } from './Socials';
 
-export default function FloatingUtilities() {
+export function FloatingUtilities(): React.JSX.Element {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,

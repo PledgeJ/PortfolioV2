@@ -4,7 +4,7 @@ import Cover from './pages/Cover';
 import Drone from './pages/Drone';
 import Projects from './pages/Projects';
 
-import FloatingUtilities from './components/FloatingUtilities'
+import { FloatingUtilities } from './components/Utils/FloatingUtilities'
 
 function App() 
 {

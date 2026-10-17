@@ -1,4 +1,4 @@
-import Header from '../components/Header'
+import { Header } from '../components/Header'
 
 import { Box, Typography, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
@@ -128,6 +128,7 @@ export default function Cover() {
 
             <p>I started building and flying drones around October 2021, and have since worked on building surveys, and I then got the opportunity to work doing technical surveys of building facades</p>
           
+            {/* Line */}
             <Box 
               className='lg:hidden'
               sx={{
