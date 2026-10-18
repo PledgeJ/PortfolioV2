@@ -6,8 +6,8 @@ import { FaJsSquare } from "react-icons/fa";
 import { SiTypescript, SiDavinciresolve } from "react-icons/si";
 import { FaReact } from "react-icons/fa";
 import { IoLogoElectron } from "react-icons/io5";
-import { TbBrandAdobePremiere } from "react-icons/tb";
 import { GiSolderingIron } from "react-icons/gi";
+
 import { Pill } from "../Pill";
 
 export function Skills(): React.JSX.Element {
@@ -22,10 +22,11 @@ export function Skills(): React.JSX.Element {
       <Typography variant='h2' sx={{ fontSize: '1rem', mb: 1.5, ml: 0.5}}>Programming languages:</Typography>
       
       <Box sx={{ display: 'flex', gap: 1.5, mb: 1.5 }}>
-        <Pill text={"Python"} colour={"#3572A5"}><FaPython /></Pill>
-        <Pill text={"ANSI C"} colour={"#555555"}></Pill>
-        <Pill text={"Java"} colour={"#B07219"}><FaJava /></Pill>
         <Pill text={"TypeScript"} colour={"#2B7489"}><SiTypescript /></Pill>
+        <Pill text={"Java"} colour={"#B07219"}><FaJava /></Pill>
+        <Pill text={"C"} colour={"#555555"}></Pill>
+        <Pill text={"C#"} colour={"#7355dd"}></Pill>
+        <Pill text={"Python"} colour={"#3572A5"}><FaPython /></Pill>
         <Pill text={"HTML"} colour={"#E44B23"}><FaHtml5 /></Pill>
       </Box>
       <Box sx={{ display: 'flex', gap: 1.5, mb: 3 }}>

@@ -31,7 +31,9 @@ export function ProjectBox({
           width: '100%',
           border: outlineColour ? `1px solid var(${outlineColour})`: 'none',
           borderRadius: 3,
-          mb: 1
+          mb: 2,
+          objectFit: 'cover',
+          aspectRatio: '16/9'
         }}
       />
 

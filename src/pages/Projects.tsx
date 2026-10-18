@@ -7,6 +7,8 @@ import { SiTypescript } from "react-icons/si";
 import { FaReact } from "react-icons/fa";
 
 import { Skills } from '../components/Projects/Skills';
+import { Pill } from '../components/Pill';
+import { GiSolderingIron } from 'react-icons/gi';
 
 export default function Projects() {
   return (
@@ -34,11 +36,42 @@ export default function Projects() {
             </Box>{' '}
             for events such as Notts Clash, and the UoN Draft Tournament.
           </Typography>
-          <Box sx={{ display: 'flex', gap: 1, fontSize: 21 }}>
-            <IoLogoElectron />
+          <Box sx={{ display: 'flex', gap: 1, fontSize: 21, alignItems: 'center' }}>
+            <Pill colour={"#2566AF"}><IoLogoElectron /></Pill>
             <Typography>+</Typography>
-            <FaReact />
-            <SiTypescript />
+            <Pill colour={"#30aed1"}><FaReact /></Pill>
+            <Pill colour={"#2B7489"}><SiTypescript /></Pill>
+          </Box>
+        </ProjectBox>
+
+        {/* Drone */}
+        <ProjectBox 
+          title={"Custom FPV Drone"} 
+          imgPath={"/placeholder.jpg"}
+          outlineColour={"--color-accent-orange"}
+        >
+          <Typography sx={{ my: 1.7 }}>
+            Building an FPV drone with 
+          </Typography>
+          <Box sx={{ display: 'flex', gap: 1, fontSize: 21, alignItems: 'center' }}>
+            <Pill colour={"#808080"}><GiSolderingIron /></Pill>
+          </Box>
+        </ProjectBox>
+
+        {/* This website */}
+        <ProjectBox 
+          title={"This portfolio"} 
+          imgPath={"/projects/thisWebsite.webp"}
+          outlineColour={"--color-accent-orange"}
+        >
+          <Typography sx={{ my: 1.7 }}>
+            Showing off these projects, and my drone work on a website, and making it a project in itself.
+            This website uses React+Vite+TS, paired with MaterialUI. It is hosted on an Oracle Cloud compute 
+            instance, and I added CD to deploy on the machine whenever changes are pushed.
+          </Typography>
+          <Box sx={{ display: 'flex', gap: 1, fontSize: 21, alignItems: 'center' }}>
+            <Pill colour={"#30aed1"}><FaReact /></Pill>
+            <Pill colour={"#2B7489"}><SiTypescript /></Pill>
           </Box>
         </ProjectBox>
         
