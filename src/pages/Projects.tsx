@@ -9,6 +9,7 @@ import { FaReact } from "react-icons/fa";
 import { Skills } from '../components/Projects/Skills';
 import { Pill } from '../components/Pill';
 import { GiSolderingIron } from 'react-icons/gi';
+import { SmallProjectBox } from '../components/SmallProjectBox';
 
 export default function Projects() {
   return (
@@ -30,10 +31,8 @@ export default function Projects() {
           link={{url: "https://github.com/PledgeJ/OBSOverwatchOverlay", text:"Github repo"}}
         >
           <Typography sx={{ my: 1.7 }}>
-            Created an overlay for OBS (specific to the game Overwatch) to help keep score and display information and statistics during streams. This has been used during streams for events at the
-            {' '}<Box component="span" sx={{ fontWeight: 800 }}>
-              University of Nottingham
-            </Box>{' '}
+            Created an overlay for OBS (specific to the game Overwatch) to help keep score, and display information and statistics in between games, during streams. This has been used during streams for events at the
+            {' '}<Box component="span" sx={{ fontWeight: 800 }}>University of Nottingham</Box>{' '}
             for events such as Notts Clash, and the UoN Draft Tournament.
           </Typography>
           <Box sx={{ display: 'flex', gap: 1, fontSize: 21, alignItems: 'center' }}>
@@ -74,6 +73,28 @@ export default function Projects() {
             <Pill colour={"#2B7489"}><SiTypescript /></Pill>
           </Box>
         </ProjectBox>
+
+        {/* Compact project section */}
+        <Box
+          sx={{pb: 7}}
+        >
+          {/* Line */}
+          <Box 
+            sx={{ width: '100%', height: 2, backgroundColor: 'var(--color-alt-text)', borderRadius: 20, opacity: 0.2, my: 5 }}
+          />
+
+          <SmallProjectBox title={"Test"} link={{url: "https://github.com/PledgeJ/OBSOverwatchOverlay", text:"Github repo"}}>
+            <Box sx={{ display: 'flex', gap: 1, fontSize: 21, alignItems: 'center' }}>
+              <Pill colour={"#30aed1"}><FaReact /></Pill>
+              <Pill colour={"#2B7489"}><SiTypescript /></Pill>
+            </Box>
+          </SmallProjectBox>
+
+          {/* Line */}
+          <Box 
+            sx={{ width: '100%', height: 2, backgroundColor: 'var(--color-alt-text)', borderRadius: 20, opacity: 0.2, my: 5 }}
+          />
+        </Box>
         
       </Box>
     </>
