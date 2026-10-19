@@ -3,7 +3,7 @@ import type React from "react";
 
 interface ProjectBoxProps {
   title?: string;
-  imgPath: string;
+  media: {type: 'img' | 'video', path: string, cover?: string};
   link?: {url: string, text: string};
   outlineColour?: string;
   children?: React.ReactNode;
@@ -11,7 +11,7 @@ interface ProjectBoxProps {
 
 export function ProjectBox({
   title = '',
-  imgPath,
+  media = {type: 'img', path: ''},
   link = {url: '', text: ''},
   children,
   outlineColour = '',
@@ -24,18 +24,38 @@ export function ProjectBox({
     >
       <Typography variant='h2' sx={{ fontSize: '1.4rem', mt: 5, mb: 2, ml: 0.5}}>{title}</Typography>
 
-      <Box
-        component='img'
-        src={imgPath}
-        sx={{
-          width: '100%',
-          border: outlineColour ? `1px solid var(${outlineColour})`: 'none',
-          borderRadius: 3,
-          mb: 2,
-          objectFit: 'cover',
-          aspectRatio: '16/9'
-        }}
-      />
+      {media.type == 'img' ? (
+        <Box
+          component='img'
+          src={media.path}
+          sx={{
+            width: '100%',
+            border: outlineColour ? `1px solid var(${outlineColour})`: 'none',
+            borderRadius: 3,
+            mb: 2,
+            objectFit: 'cover',
+            aspectRatio: '16/9'
+          }}
+        />
+      ) : (
+        <Box 
+          component='video'
+          src={media.path}
+          muted
+          playsInline
+          autoPlay
+          loop
+          sx={{
+            width: '100%',
+            border: outlineColour ? `1px solid var(${outlineColour})`: 'none',
+            borderRadius: 3,
+            mb: 2,
+            objectFit: 'cover',
+            aspectRatio: '16/9'
+          }}
+          poster={media.cover}
+        />
+      )}
 
       <Link href={link.url} target="_blank" rel="noopener noreferrer">{link.text}</Link>
 

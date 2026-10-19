@@ -17,7 +17,8 @@ export default function Projects() {
       <Header />
 
       <Box sx={{
-        ml: 2, mr: 2,
+        width: '100%', pl: 2, pr: 2, mx: 'auto',
+        display: 'inline-flex', flexWrap: 'wrap', gap: 4.5
       }}>
 
         {/* Experience */}
@@ -26,7 +27,7 @@ export default function Projects() {
         {/* OBS Overlay */}
         <ProjectBox 
           title={"OBS Overlay"} 
-          imgPath={"/placeholder.jpg"}
+          media={{type: 'img', path:"/projects/OBSOverlay.webp"}}
           outlineColour={"--color-accent-orange"}
           link={{url: "https://github.com/PledgeJ/OBSOverwatchOverlay", text:"Github repo"}}
         >
@@ -46,7 +47,7 @@ export default function Projects() {
         {/* Drone */}
         <ProjectBox 
           title={"Custom FPV Drone"} 
-          imgPath={"/placeholder.jpg"}
+          media={{type: 'video', path: 'projects/BuildTimelapse.webm', cover:'cover/redFPVDrone.webp'}}
           outlineColour={"--color-accent-orange"}
         >
           <Typography sx={{ my: 1.7 }}>
@@ -60,7 +61,7 @@ export default function Projects() {
         {/* This website */}
         <ProjectBox 
           title={"This portfolio"} 
-          imgPath={"/projects/thisWebsite.webp"}
+          media={{type: 'img', path: "/projects/thisWebsite.webp"}}
           outlineColour={"--color-accent-orange"}
         >
           <Typography sx={{ my: 1.7 }}>
