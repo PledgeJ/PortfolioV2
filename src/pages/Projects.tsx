@@ -33,7 +33,8 @@ export default function Projects() {
           link={{url: "https://github.com/PledgeJ/OBSOverwatchOverlay", text:"Github repo"}}
         >
           <Typography sx={{ my: 1.7 }}>
-            Created an overlay for OBS (specific to the game Overwatch) to help keep score, and display information and statistics in between games, during streams. This has been used during streams for events at the
+            Created an overlay for OBS (specific to the game Overwatch) to help keep score, and display information and 
+            statistics in between games, during streams. This has been used during streams for events at the
             {' '}<Box component="span" sx={{ fontWeight: 800 }}>University of Nottingham</Box>{' '}
             for events such as Notts Clash, and the UoN Draft Tournament.
           </Typography>
