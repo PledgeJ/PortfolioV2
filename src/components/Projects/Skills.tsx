@@ -21,7 +21,7 @@ export function Skills(): React.JSX.Element {
 
       <Typography variant='h2' sx={{ fontSize: '1rem', mb: 1.5, ml: 0.5}}>Programming languages:</Typography>
       
-      <Box sx={{ display: 'flex', gap: 1.5, mb: 3, flexWrap: 'wrap' }}>
+      <Box sx={{ display: 'flex', gap: 1.5, mb: 5, flexWrap: 'wrap' }}>
         <Pill text={"TypeScript"} colour={"#2B7489"}><SiTypescript /></Pill>
         <Pill text={"Java"} colour={"#B07219"}><FaJava /></Pill>
         <Pill text={"C"} colour={"#555555"}></Pill>
@@ -33,7 +33,7 @@ export function Skills(): React.JSX.Element {
       </Box>
 
       <Typography variant='h2' sx={{ fontSize: '1rem', mb: 1.5, ml: 0.5}}>UI Frameworks:</Typography>
-      <Box sx={{ display: 'flex', gap: 1.5, mb: 3, flexWrap: 'wrap' }}>
+      <Box sx={{ display: 'flex', gap: 1.5, mb: 5, flexWrap: 'wrap' }}>
         <Pill text={"React"} colour={"#30aed1"}><FaReact /></Pill>
         <Pill text={"Electron"} colour={"#2566AF"}><IoLogoElectron /></Pill>
       </Box>
