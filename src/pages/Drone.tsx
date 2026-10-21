@@ -40,7 +40,7 @@ export default function Drone() {
         {/* 3D Models */}
         <ProjectBox 
           title={"3D Models"} 
-          media={{type: 'img', path: ''}}
+          media={{type: 'img', path: 'drone/pointcloud.webp'}}
           outlineColour={"--color-accent-blue"}
         >
           <Typography sx={{ my: 1.7 }}>
