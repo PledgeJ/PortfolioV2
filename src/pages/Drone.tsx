@@ -1,8 +1,23 @@
-import { Box, Typography } from '@mui/material';
+import { useEffect } from 'react';
+import { Link as RouterLink, useLocation } from 'react-router-dom';
+
+import { Box, Link, Typography } from '@mui/material';
 import { Header } from '../components/Header'
 import { ProjectBox } from '../components/ProjectBox';
 
 export default function Drone() {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (!pathname) return;
+
+    // by default scroll to top
+    if (!hash) window.scrollTo(0,0);
+
+    const elem = document.getElementById(hash.slice(1));
+    if (elem) elem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, [pathname, hash]);
+
   return (
     <>
       <Header />
@@ -18,22 +33,30 @@ export default function Drone() {
           title={"Introduction"}
         >
           <Typography sx={{ my: 1.7 }}>
-            I sat down with my Dad discussing how drones (which is a major hobby of mine) could be used in the structural
-            engineering industry. Using drones to take pictures and videos of the outsides of buildings for the purpose of
-            surveying their condition eliminates the need to pay someone to put up scaffolding, takes a lot less time, and
-            allows you to get to places that a person wouldn’t be able to get to very easily.
+            I got my first drone in Autumn 2021, it was a DJI mini 2. Since then I've learned pretty much everything about drones,
+            branching out to FPV drones, and drone racing. Learning about FPV drones also had me
+            {' '}<Link component={RouterLink} to="/projects#drone">building my own FPV drone</Link>
+            , where I learnt how to solder soldering and work with electronics in general.
+            <br/><br/>
+            I have turned this hobby into multiple opportunities by using my drones to make some people's work easier (see
+            {' '}<Link component={RouterLink} to="/drone#build">Building Surveys</Link>), as well as helping advertise and documenting
+            events (see {' '}<Link component={RouterLink} to="/drone#GH">Get Holed</Link>) through videos and photos.
           </Typography>
         </ProjectBox>
 
         {/* Building surveys */}
         <ProjectBox 
+          id={'build'}
           title={"Building Surveys"} 
           media={{type: 'img', path: '/drone/BurtonSign.webp'}}
           outlineColour={"--color-accent-blue"}
         >
-          <Typography sx={{ my: 1.7 }}>
-            Taking close up videos and photos for structural engineers to use for surveying buildings. This allows them to
-            carry out the surveys without having to get someone up on scaffolding.
+          <Typography sx={{ my: 1.7 }}> 
+            Using drones to take pictures and videos of the outsides of buildings for the purpose of surveying their 
+            condition eliminates the need to pay someone to put up scaffolding, takes a lot less time, and allows you
+            to get to places that a person wouldn't be able to get to very easily. 
+            <br/><br/>
+            Below are some examples of my work with a local structual engineering company.
           </Typography>
         </ProjectBox>
 
@@ -93,6 +116,7 @@ export default function Drone() {
 
         {/* Get Holed picture */}
         <ProjectBox 
+          id={'GH'}
           title={"Get Holed 2024 picture"} 
           media={{type: 'img', path: 'drone/ghPic.webp'}}
           outlineColour={"--color-accent-blue"}

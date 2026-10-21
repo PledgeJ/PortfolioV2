@@ -10,6 +10,7 @@ interface ProjectBoxProps {
   muted?: boolean;
   controls?: boolean;
   children?: React.ReactNode;
+  id?: string;
 }
 
 export function ProjectBox({
@@ -20,13 +21,16 @@ export function ProjectBox({
   outlineColour = '',
   autoplay = true,
   muted = true,
-  controls = false
+  controls = false,
+  id
 }: ProjectBoxProps): React.JSX.Element {
   return (
     <Box
+      id={id}
       sx={{
         width: '100%',
         maxWidth: 470,
+        scrollMarginTop: '100px',
       }}
     >
       <Typography variant='h2' sx={{ fontSize: '1.4rem', mt: 5, mb: 2, ml: 0.5}}>{title}</Typography>

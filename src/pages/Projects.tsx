@@ -1,18 +1,32 @@
 import { Box, Typography } from '@mui/material';
 import { Header } from '../components/Header'
 import { ProjectBox } from '../components/ProjectBox';
+import { Skills } from '../components/Projects/Skills';
+import { Pill } from '../components/Pill';
+import { SmallProjectBox } from '../components/SmallProjectBox';
 
 import { IoLogoElectron } from "react-icons/io5";
 import { SiTypescript } from "react-icons/si";
 import { FaHtml5, FaPython, FaReact, FaUnity } from "react-icons/fa6";
-
-import { Skills } from '../components/Projects/Skills';
-import { Pill } from '../components/Pill';
-import { GiSolderingIron } from 'react-icons/gi';
-import { SmallProjectBox } from '../components/SmallProjectBox';
 import { FaJsSquare } from 'react-icons/fa';
+import { GiSolderingIron } from 'react-icons/gi';
+
+import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 
 export default function Projects() {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (!pathname) return;
+
+    // by default scroll to top
+    if (!hash) window.scrollTo(0,0);
+
+    const elem = document.getElementById(hash.slice(1));
+    if (elem) elem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, [pathname, hash]);
+
   return (
     <>
       <Header />
@@ -34,9 +48,10 @@ export default function Projects() {
         >
           <Typography sx={{ my: 1.7 }}>
             Created an overlay for OBS (specific to the game Overwatch) to help keep score, and display information and 
-            statistics in between games, during streams. This has been used during streams for events at the
+            statistics in between games, during streams. V1 of this overlay has been used during streams for events at the
             {' '}<Box component="span" sx={{ fontWeight: 800 }}>University of Nottingham</Box>{' '}
-            for events such as Notts Clash, and the UoN Draft Tournament.
+            for events such as Notts Clash, and the UoN Draft Tournament, and I've been developing v2 to address any issues
+            we had before and give it a visual overhall with the help of feedback from viewers.
           </Typography>
           <Box sx={{ display: 'flex', gap: 1, fontSize: 21, alignItems: 'center' }}>
             <Pill colour={"#2566AF"}><IoLogoElectron /></Pill>
@@ -47,7 +62,8 @@ export default function Projects() {
         </ProjectBox>
 
         {/* Drone */}
-        <ProjectBox 
+        <ProjectBox
+          id={'drone'}
           title={"Custom FPV Drone"} 
           media={{type: 'video', path: 'projects/BuildTimelapse.webm', cover:'cover/redFPVDrone.webp'}}
           outlineColour={"--color-accent-orange"}
@@ -75,7 +91,7 @@ export default function Projects() {
           <Typography sx={{ my: 1.7 }}>
             Showing off these projects, and my drone work on a website, and making it a project in itself.
             This website uses React+Vite+TS, paired with MaterialUI. It is hosted on an Oracle Cloud compute 
-            instance, and I added CD to deploy on the machine whenever changes are pushed.
+            instance, and I added a github action to deploy on the machine whenever changes are pushed to main.
           </Typography>
           <Box sx={{ display: 'flex', gap: 1, fontSize: 21, alignItems: 'center' }}>
             <Pill colour={"#30aed1"}><FaReact /></Pill>

@@ -1,13 +1,26 @@
+import { useEffect } from 'react';
 import { Header } from '../components/Header'
-
 import { Box, Typography, Button } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { ProjectBox } from '../components/ProjectBox';
+
+import { Link, useLocation } from 'react-router-dom';
 
 import { TbDrone } from "react-icons/tb";
 import { FaCode } from "react-icons/fa6";
-import { ProjectBox } from '../components/ProjectBox';
 
 export default function Cover() {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (!pathname) return;
+
+    // by default scroll to top
+    if (!hash) window.scrollTo(0,0);
+
+    const elem = document.getElementById(hash.slice(1));
+    if (elem) elem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, [pathname, hash]);
+
   return (
     <>
       <Header />
