@@ -19,7 +19,7 @@ export default function Projects() {
 
       <Box sx={{
         width: '100%', pl: 2, pr: 2, mx: '2', justifyContent: 'center',
-        display: 'inline-flex', flexWrap: 'wrap', gap: 4.5
+        display: 'inline-flex', flexWrap: 'wrap', gap: 4.5, mb:12
       }}>
 
         {/* Experience */}
@@ -83,7 +83,7 @@ export default function Projects() {
           </Box>
         </ProjectBox>
 
-        <Box sx={{ width: '100%', mb: 12, maxWidth: 470 }}>
+        <Box sx={{ width: '100%', maxWidth: 470 }}>
           {/* Line */}
           <Box 
             sx={{ width: '100%', height: 2, backgroundColor: 'var(--color-alt-text)', borderRadius: 20, opacity: 0.2, mb: 3 }}

@@ -22,7 +22,7 @@ export default function Cover() {
         loop
         sx={{
           width: '100%',
-          maxHeight: '40vh',
+          maxHeight: '45vh',
           objectFit: 'cover'
         }}
         poster="/cover/sunrise mountain.png"
@@ -30,7 +30,7 @@ export default function Cover() {
 
       <Box sx={{
         width: '100%', pl: 2, pr: 2, mx: '2', justifyContent: 'center',
-        display: 'inline-flex', flexWrap: 'wrap', gap: 4.5, mt: 5
+        display: 'inline-flex', flexWrap: 'wrap', gap: 4.5, mt: 2, mb: 12
       }}>
 
         {/* Intro */}
@@ -46,31 +46,8 @@ export default function Cover() {
           </Typography>
         </ProjectBox>
 
-        {/* Drone */}
-        <ProjectBox 
-          title={"Drones"} 
-          media={{type: 'img', path:"/cover/redFPVDrone.webp"}}
-          outlineColour={"--color-accent-green"}
-        >
-          <Typography sx={{ my: 1.7 }}>
-            I started building and flying drones around October 2021, and have since worked on building surveys, and I
-            then got the opportunity to work doing technical surveys of building facades
-          </Typography>
-        </ProjectBox>
-
-        {/* OffScript */}
-        <ProjectBox 
-          media={{type: 'img', path:"/cover/arthur.webp"}}
-          outlineColour={"--color-accent-green"}
-        >
-          <Typography sx={{ my: 1.7 }}>
-            I'm a very visual person, who likes colours and anything that I think looks super cool. 
-            An animator that I really love the style of is OffScript, who created the characters Aira and Aurthur
-          </Typography>
-        </ProjectBox>
-
         {/* Check out work */}
-        <Box sx={{ width: '100%', mb: 12, maxWidth: 470 }}>
+        <Box sx={{ width: '100%', maxWidth: 470 }}>
           <Typography variant='h2' sx={{ fontSize: '1.4rem', mt: 5, mb: 2, ml: 0.5}}>Check out my work:</Typography>
 
           <Box
@@ -131,7 +108,29 @@ export default function Cover() {
           </Box>
         </Box>
 
+        {/* Drone */}
+        <ProjectBox 
+          title={"Drones"} 
+          media={{type: 'img', path:"/cover/redFPVDrone.webp"}}
+          outlineColour={"--color-accent-green"}
+        >
+          <Typography sx={{ my: 1.7 }}>
+            I started building and flying drones around October 2021, and have since worked on building surveys, and I
+            then got the opportunity to work doing technical surveys of building facades
+          </Typography>
+        </ProjectBox>
 
+        {/* OffScript */}
+        <ProjectBox 
+          title={'._.'}
+          media={{type: 'img', path:"/cover/Arthur.webp"}}
+          outlineColour={"--color-accent-green"}
+        >
+          <Typography sx={{ my: 1.7 }}>
+            I'm a very visual person, who likes colours and anything that I think looks super cool. 
+            An animator that I really love the style of is OffScript, who created the characters Aira and Aurthur
+          </Typography>
+        </ProjectBox>
       </Box>
     </>
   );

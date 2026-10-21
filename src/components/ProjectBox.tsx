@@ -3,22 +3,29 @@ import type React from "react";
 
 interface ProjectBoxProps {
   title?: string;
-  media: {type: 'img' | 'video', path: string, cover?: string};
+  media?: {type: '' | 'img' | 'video', path: string, cover?: string};
   link?: {url: string, text: string};
   outlineColour?: string;
+  autoplay?: boolean;
+  muted?: boolean;
+  controls?: boolean;
   children?: React.ReactNode;
 }
 
 export function ProjectBox({
   title = '',
-  media = {type: 'img', path: ''},
+  media = {type: '', path: ''},
   link = {url: '', text: ''},
   children,
   outlineColour = '',
+  autoplay = true,
+  muted = true,
+  controls = false
 }: ProjectBoxProps): React.JSX.Element {
   return (
     <Box
       sx={{
+        width: '100%',
         maxWidth: 470,
       }}
     >
@@ -37,13 +44,14 @@ export function ProjectBox({
             aspectRatio: '16/9'
           }}
         />
-      ) : (
+      ) : media.type == 'video' ? (
         <Box 
           component='video'
           src={media.path}
-          muted
+          muted={muted}
           playsInline
-          autoPlay
+          autoPlay={autoplay}
+          controls={controls}
           loop
           sx={{
             width: '100%',
@@ -55,7 +63,7 @@ export function ProjectBox({
           }}
           poster={media.cover}
         />
-      )}
+      ) : (<> </>)}
 
       <Link href={link.url} target="_blank" rel="noopener noreferrer">{link.text}</Link>
 
